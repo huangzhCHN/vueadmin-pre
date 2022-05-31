@@ -26,6 +26,20 @@ Mock.mock('/captcha','get',() => {
 
 Mock.mock(RegExp('/login*'),'post',(config) => {
     // 这里无法在header添加authorization，直接跳过
-   console.log("mock----------------login")
    return Result
+})
+
+//---------获取用户信息
+Mock.mock('/sys/userInfo','get',() => {
+    Result.data = {
+        id: "1",
+        username: "test",
+        avatar: "https://image-1300566513.cos.ap-guangzhou.myqcloud.com/upload/images/5a9f48118166308daba8b6da7e466aab.jpg"
+    }
+    return Result
+})
+
+//----------退出登录
+Mock.mock('/logout', 'post', () => {
+	return Result
 })
