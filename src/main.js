@@ -10,7 +10,6 @@ require("./mock")
 Vue.config.productionTip = false
 Vue.use(Element)
 Vue.prototype.$axios = request //
-
 new Vue({
   router,
   store,

@@ -7,7 +7,7 @@
             <el-header style="height: 55px;">
                 <Strong>ManHub后台管理系统</Strong>
                 <div class="header-avatar">
-                    <el-avatar :size="medium" :src="userInfo.avatar"></el-avatar>
+                    <el-avatar size="medium" :src="userInfo.avatar"></el-avatar>
                     <el-dropdown>
                         <span class="el-dropdown-link">
                             {{userInfo.username}}<i class="el-icon-arrow-down el-icon--right"></i>
@@ -24,8 +24,11 @@
                 </div>
             </el-header>
             <el-main>
+                <tabs></tabs>
                 <div style="margin: 0 15px;">
+                <keep-alive>
                     <router-view></router-view>
+                </keep-alive>
                 </div>
             </el-main>
         </el-container>
@@ -34,6 +37,7 @@
 
 <script>
 import SideMenu from './inc/SideMenu.vue'
+import Tabs from './inc/Tabs.vue'
 export default {
   name:'Home',
   data(){
@@ -64,7 +68,8 @@ export default {
       this.getUserInfo()
   },
   components: {
-      SideMenu
+      SideMenu,
+      Tabs
   }
 }
 </script>

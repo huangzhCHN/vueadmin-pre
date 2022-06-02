@@ -9,7 +9,7 @@ const request = axios.create({
     }
 })
 request.interceptors.request.use(config => {
-    config.headers['Authorization'] = localStorage.getItem("token")
+    config.headers['Authorization'] = sessionStorage.getItem("token")
     return config
 })
 request.interceptors.response.use(response => {
